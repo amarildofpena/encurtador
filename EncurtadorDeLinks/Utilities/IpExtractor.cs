@@ -1,5 +1,4 @@
 using Microsoft.Azure.Functions.Worker.Http;
-using Microsoft.Azure.Functions.Worker;
 
 namespace EncurtadorDeLinks.Utilities;
 
@@ -46,7 +45,6 @@ public static class IpExtractor
                 return clientIp;
         }
 
-        // 4. ✅ Fallback: RemoteIpAddress via FunctionContext (funciona em localhost)
         var feature = request.FunctionContext.Features
             .Get<Microsoft.AspNetCore.Http.Features.IHttpConnectionFeature>();
 
